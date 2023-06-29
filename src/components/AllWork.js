@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 // Import Swiper React components
 import { Swiper, SwiperSlide } from "swiper/react";
 // import { SwiperComponent as Swiper } from 'swiper/react';
@@ -75,12 +75,70 @@ import j5 from '../assets/Project/Assigenment_03/5.JPG';
 
 
 const AllWork = () => {
+    const [isShowMore, setIsShowMore] = useState(false);
+    const toggleReadMoreLess = () => {
+        setIsShowMore(!isShowMore);
+    };
+    const [isShowMore1, setIsShowMore1] = useState(false);
+    const toggleReadMoreLess1 = () => {
+        setIsShowMore1(!setIsShowMore1);
+    };
+    const [isShowMore2, setIsShowMore2] = useState(false);
+    const toggleReadMoreLess2 = () => {
+        setIsShowMore2(!setIsShowMore2);
+    };
+    const [isShowMore3, setIsShowMore3] = useState(false);
+    const toggleReadMoreLess3 = () => {
+        setIsShowMore3(!setIsShowMore3);
+    };
+    const [isShowMore4, setIsShowMore4] = useState(false);
+    const toggleReadMoreLess4 = () => {
+        setIsShowMore4(!setIsShowMore4);
+    };
+    const [isShowMore5, setIsShowMore5] = useState(false);
+    const toggleReadMoreLess5 = () => {
+        setIsShowMore5(!setIsShowMore5);
+    };
     return (
         <section>
-            <div className='container mx-auto'>
+            <div className='container mx-auto mt-[150px]'>
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                    <h1 className="text-3xl font-bold my-4">Project Name: Tour KOro <span></span></h1>
-                    <h3 className="font-bold my-4">Project Base: PHP Project</h3>
+                    <motion.h2
+                        variants={fadeIn('up', 0.3)}
+                        initial="hidden"
+                        whileInView={'show'}
+                        viewport={{ once: false, amount: 0.7 }}
+                        className="text-3xl font-bold mt-4">
+                        Project Name: Tour Koro
+                        <span><a href='https://drive.google.com/file/d/1SZfE4Wuw9damLtHRQD3VJK1cIlQqvmzW/view?usp=sharing' className='ml-[300px] mt-[-35px] btn w-9 h-9 mb-[40px] flex justify-center item-center'>
+                            <BsArrowUpRight></BsArrowUpRight>
+                        </a></span>
+                    </motion.h2>
+                    <h3 className="mt-4 text-[36px] lg:text-[40px] font-secondary font-semibold">
+                        Technology used:
+                        <TypeAnimation sequence={[
+                            'HTML',
+                            300,
+                            'CSS',
+                            300,
+
+                            'Bootstrap',
+                            300,
+                            'PHP',
+                            300,
+                            'JQuery',
+                            300,
+                            'Ajex',
+                            300,
+                            'MySQL',
+                            300,
+                        ]}
+                            speed={50}
+                            className='text-accent'
+                            wrapper='span'
+                            repeat={Infinity}
+                        />
+                    </h3>
                     {/* Slider....... */}
                     <div>
                         <Swiper
@@ -143,11 +201,58 @@ const AllWork = () => {
                     </div>
                     {/* Text  */}
                     <div>
-                        <h4>Project Name</h4>
+                        <h4>Tour Koro is a PHP-based group project led by our department head. The project aims to provide comprehensive travel services through our website. The website offers a range of
+                            features and functionalities, catering to various aspects of travel, including car bookings, hotel reservations, exploring new destinations,
+                            viewing and participating in events, a live chatting system, articles related to travel, and even a job search feature.</h4>
                         <p>
-                            With a CSE degree, you have gained a strong foundation in various areas of computer science. With a CSE degree, you have gained a strong foundation in various areas of computer science.
-                            With a CSE degree, you have gained a strong foundation in various areas of computer science.With a CSE degree, you have gained a strong foundation in various areas of computer science.
+                            The frontend part of Tour Koro focuses on delivering a user-friendly and visually appealing interface. It ensures seamless navigation and intuitive user experience for visitors
+                            accessing the website. The frontend incorporates attractive design elements, responsive layouts, and efficient information presentation to engage users and enhance their interaction with the platform.
+                            <br />
                         </p>
+                        {isShowMore && (<p>
+
+                            On the backend side, the project implements robust PHP programming techniques to handle the website's functionality and manage data. It involves developing secure and efficient
+                            algorithms for handling user requests, processing bookings, managing event registrations, and providing real-time updates on available services. The backend also includes
+                            a database system to store and retrieve information related to cars, hotels, events, articles, and job listings.
+
+                            <br />
+                            The Tour Koro project aspires to offer a one-stop platform for travel enthusiasts, ensuring they can conveniently plan their trips, find suitable accommodations, explore
+                            exciting destinations, and participate in various events. The inclusion of a live chatting system allows users to seek assistance and guidance during their travel planning process, enhancing their overall experience.
+                            <br />
+                            Additionally, the platform incorporates a section dedicated to articles, providing valuable insights, travel tips, and destination recommendations to users. The job search feature caters to individuals interested
+                            in pursuing careers in the travel industry, offering them a convenient way to find relevant job opportunities.
+                            <br />
+                            Through Tour Koro, our team aims to create a comprehensive and user-centric travel website that meets the diverse needs of travelers. By leveraging PHP for the backend and incorporating a range of features on
+                            the frontend, we strive to provide an immersive and convenient travel experience for our users.
+                        </p>
+                        )}
+
+                        <motion.button
+                            variants={fadeIn('up', 0.3)}
+                            initial="hidden"
+                            whileInView={'show'}
+                            viewport={{ once: false, amount: 0.7 }}
+                            onClick={toggleReadMoreLess}
+                            className="text-accent">
+                            {isShowMore ? "Read Less" : "Read More"}
+                        </motion.button>
+                        <motion.div
+                            variants={fadeIn('up', 0.3)}
+                            initial="hidden"
+                            whileInView={'show'}
+                            viewport={{ once: false, amount: 0.5 }}
+                            className="grid grid-cols-2 md:grid-cols-2">
+                            <div>Source Code:
+                                <a href='https://drive.google.com/drive/folders/1dE9taKwq4eCfh1l2W5CB7uYGOKZocda4?usp=sharing' className='ml-[100px] mt-[-35px] btn w-9 h-9 mb-[40px] flex justify-center item-center'>
+                                    <BsArrowUpRight></BsArrowUpRight>
+                                </a>
+                            </div>
+                            {/* <div>Server Site:
+                                <span><a href='https://magice-toy-mart.web.app/' className='ml-[80px] mt-[-35px] btn w-9 h-9 mb-[40px] flex justify-center item-center'>
+                                    <BsArrowUpRight></BsArrowUpRight>
+                                </a></span>
+                            </div> */}
+                        </motion.div>
                     </div>
                 </div>
                 {/* second project  */}
@@ -160,7 +265,7 @@ const AllWork = () => {
                         viewport={{ once: false, amount: 0.7 }}
                         className="text-3xl font-bold mt-4">
                         Project Name: Flavors of Bangladesh
-                        <span><a href='https://magice-toy-mart.web.app/' className='ml-[540px] mt-[-35px] btn w-9 h-9 mb-[40px] flex justify-center item-center'>
+                        <span><a href='https://magice-toy-mart.web.app/' className='ml-[460px] mt-[-35px] btn w-9 h-9 mb-[40px] flex justify-center item-center'>
                             <BsArrowUpRight></BsArrowUpRight>
                         </a></span>
                     </motion.h2>
@@ -242,15 +347,26 @@ const AllWork = () => {
                             One of the key features of the project is the Register and Login system, which utilizes the Firebase Authentication system. Users can create an account, log in, and access personalized features.
                             The website also includes a banner section, which serves as a visually appealing introduction to the site. The banner section may include enticing images or promotional content related to Bangladeshi cuisine.
                         </p>
-                        {/* <p>
-                            The about section provides information about the project, such as its purpose, goals, and the team behind it. It may also highlight the cultural significance of Bangladeshi cuisine and its impact on the country's identity.<br />
-                            The all recipes section is a comprehensive collection of various Bangladeshi recipes. Users can browse through different categories or search for specific recipes. Each recipe may include ingredients, step-by-step instructions, and accompanying images
-                        </p> */}
-                        <p>
-                            Lastly, the contact section allows users to get in touch with the project team. It may include a contact form or provide contact details for inquiries, feedback, or collaboration opportunities.
-                            <br />
-                            Overall, "Flavors of Bangladesh" aims to celebrate the rich culinary traditions of Bangladesh through an engaging and user-friendly web platform, offering a combination of information, recipes, and interactive features for users to explore and enjoy.
-                        </p>
+                        {isShowMore1 && (
+                            <p>
+                                The about section provides information about the project, such as its purpose, goals, and the team behind it. It may also highlight the cultural significance of Bangladeshi cuisine and its impact on the country's identity.<br />
+                                The all recipes section is a comprehensive collection of various Bangladeshi recipes. Users can browse through different categories or search for specific recipes. Each recipe may include ingredients, step-by-step instructions, and accompanying images
+                                <br />
+                                Lastly, the contact section allows users to get in touch with the project team. It may include a contact form or provide contact details for inquiries, feedback, or collaboration opportunities.
+                                <br />
+                                Overall, "Flavors of Bangladesh" aims to celebrate the rich culinary traditions of Bangladesh through an engaging and user-friendly web platform, offering a combination of information, recipes, and interactive features for users to explore and enjoy.
+                            </p>
+                        )}
+
+                        <motion.button
+                            variants={fadeIn('up', 0.3)}
+                            initial="hidden"
+                            whileInView={'show'}
+                            viewport={{ once: false, amount: 0.7 }}
+                            onClick={toggleReadMoreLess1}
+                            className="text-accent">
+                            {isShowMore1 ? "Read Less" : "Read More"}
+                        </motion.button>
                         <motion.div
                             variants={fadeIn('up', 0.3)}
                             initial="hidden"
@@ -274,13 +390,13 @@ const AllWork = () => {
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-6 my-2">
                     {/* <h1 className="text-3xl font-bold mt-4">Project Name: Flavors of Bangladesh <span></span></h1> */}
                     <motion.h2
-                        variants={fadeIn('up', 0.3)}
+                        variants={fadeIn('up', 0.5)}
                         initial="hidden"
                         whileInView={'show'}
                         viewport={{ once: false, amount: 0.7 }}
                         className="text-3xl font-bold mt-4">
                         Project Name: Magical Toy Mart
-                        <span><a href='https://magice-toy-mart.web.app/' className='ml-[460px] mt-[-35px] btn w-9 h-9 mb-[40px] flex justify-center item-center'>
+                        <span><a href='https://magice-toy-mart.web.app/' className='ml-[400px] mt-[-35px] btn w-9 h-9 mb-[40px] flex justify-center item-center'>
                             <BsArrowUpRight></BsArrowUpRight>
                         </a></span>
                     </motion.h2>
@@ -374,14 +490,25 @@ const AllWork = () => {
                         <p>
                             The project organizes toys into different categories based on subjects like Math, Science, Engineering, and more. Each category showcases a variety of toys that align with the respective subject, allowing users to easily find toys suitable for specific educational needs.
                         </p>
-                        <p>
-                            Additionally, the project incorporates two routers. The first router, "All Toys," enables users to view and explore the entire collection of toys available in the Magical Toy. The second router, "My Toy," provides a personalized
-                            experience by displaying only the toys posted by the logged-in user. Users can access and manage their posted toys using basic CRUD functionality, allowing them to create, read, update, and delete their toy listings.
-                        </p>
-                        <p>
-                            Overall, "Magical Toy Mart" seeks to provide a user-friendly platform for discovering and engaging with educational and learning toys. By combining a range of features, including authentication, service information, categorized toy selection,
-                            a captivating gallery, and personalized toy management, the project aims to create an enriching and enjoyable experience for users interested in educational toys.
-                        </p>
+                        {isShowMore2 && (
+                            <p>
+                                Additionally, the project incorporates two routers. The first router, "All Toys," enables users to view and explore the entire collection of toys available in the Magical Toy. The second router, "My Toy," provides a personalized
+                                experience by displaying only the toys posted by the logged-in user. Users can access and manage their posted toys using basic CRUD functionality, allowing them to create, read, update, and delete their toy listings.
+                                <br />
+                                Overall, "Magical Toy Mart" seeks to provide a user-friendly platform for discovering and engaging with educational and learning toys. By combining a range of features, including authentication, service information, categorized toy selection,
+                                a captivating gallery, and personalized toy management, the project aims to create an enriching and enjoyable experience for users interested in educational toys.
+                            </p>
+                        )}
+
+                        <motion.button
+                            variants={fadeIn('up', 0.3)}
+                            initial="hidden"
+                            whileInView={'show'}
+                            viewport={{ once: false, amount: 0.7 }}
+                            onClick={toggleReadMoreLess2}
+                            className="text-accent">
+                            {isShowMore2 ? "Read Less" : "Read More"}
+                        </motion.button>
                         <motion.div
                             variants={fadeIn('up', 0.3)}
                             initial="hidden"
@@ -476,11 +603,23 @@ const AllWork = () => {
                         <p>
                             The project organizes toys into different categories based on subjects like Math, Science, Engineering, and more. Each category showcases a variety of toys that align with the respective subject, allowing users to easily find toys suitable for specific educational needs.
                         </p>
+                        {isShowMore3 && (
+                            <p>
+                                Overall, "Magical Toy Mart" seeks to provide a user-friendly platform for discovering and engaging with educational and learning toys. By combining a range of features, including authentication, service information, categorized toy selection,
+                                a captivating gallery, and personalized toy management, the project aims to create an enriching and enjoyable experience for users interested in educational toys.
+                            </p>
+                        )}
 
-                        <p>
-                            Overall, "Magical Toy Mart" seeks to provide a user-friendly platform for discovering and engaging with educational and learning toys. By combining a range of features, including authentication, service information, categorized toy selection,
-                            a captivating gallery, and personalized toy management, the project aims to create an enriching and enjoyable experience for users interested in educational toys.
-                        </p>
+                        <motion.button
+                            variants={fadeIn('up', 0.3)}
+                            initial="hidden"
+                            whileInView={'show'}
+                            viewport={{ once: false, amount: 0.7 }}
+                            onClick={toggleReadMoreLess3}
+                            className="text-accent">
+                            {isShowMore3 ? "Read Less" : "Read More"}
+                        </motion.button>
+
                         <motion.div
                             variants={fadeIn('up', 0.3)}
                             initial="hidden"
@@ -501,107 +640,6 @@ const AllWork = () => {
                     </div>
                 </div>
                 {/* fivth project  */}
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-6 my-2">
-                    {/* <h1 className="text-3xl font-bold mt-4">Project Name: Flavors of Bangladesh <span></span></h1> */}
-                    <motion.h2
-                        variants={fadeIn('up', 0.3)}
-                        initial="hidden"
-                        whileInView={'show'}
-                        viewport={{ once: false, amount: 0.7 }}
-                        className="text-3xl font-bold mt-4">
-                        Project Name: Alomoni Aconnson
-                        <span><a href='https://magice-toy-mart.web.app/' className='ml-[460px] mt-[-35px] btn w-9 h-9 mb-[40px] flex justify-center item-center'>
-                            <BsArrowUpRight></BsArrowUpRight>
-                        </a></span>
-                    </motion.h2>
-                    <h3 className="mt-4 text-[36px] lg:text-[40px] font-secondary font-semibold">
-                        Technology used:
-                        <TypeAnimation sequence={[
-                            'JavaScript',
-                            300,
-                            'Tailwind',
-                            300,
-                            'DaisyUI',
-                            300,
-                            'React.js',
-                            300,
-                            'Express.js',
-                            300,
-                            'MongoDB',
-                            300,
-                            'Vercel',
-                            300,
-                            'Authentication',
-                            300,
-                        ]}
-                            speed={50}
-                            className='text-accent'
-                            wrapper='span'
-                            repeat={Infinity}
-                        />
-                    </h3>
-
-                    {/* Slider....... */}
-                    <div className="md:mt-[-20px]">
-                        <Swiper
-                            spaceBetween={30}
-                            centeredSlides={true}
-                            autoplay={{
-                                delay: 3000,
-                                disableOnInteraction: false,
-                            }}
-                            pagination={{
-                                clickable: true,
-                            }}
-                            navigation={true}
-                            modules={[Autoplay, Pagination, Navigation]}
-                            className="mySwiper"
-                        >
-                            <SwiperSlide>
-                                <img src={a1}></img>
-                            </SwiperSlide>
-                            <SwiperSlide>
-                                <img src={a2}></img>
-                            </SwiperSlide>
-                            <SwiperSlide>
-                                <img src={a3}></img>
-                            </SwiperSlide>
-
-                        </Swiper>
-                    </div>
-                    {/* Text  */}
-                    <div className="md:mt-[-20px]">
-                        <h4>""Magical Toy Mart" is a React-based project focused on educational and learning toys. The project aims to provide a platform for users to explore, purchase, and engage with a wide range of educational toys.</h4>
-                        <p>
-                            The project organizes toys into different categories based on subjects like Math, Science, Engineering, and more. Each category showcases a variety of toys that align with the respective subject, allowing users to easily find toys suitable for specific educational needs.
-                        </p>
-                        <p>
-                            Additionally, the project incorporates two routers. The first router, "All Toys," enables users to view and explore the entire collection of toys available in the Magical Toy. The second router, "My Toy," provides a personalized
-                            experience by displaying only the toys posted by the logged-in user. Users can access and manage their posted toys using basic CRUD functionality, allowing them to create, read, update, and delete their toy listings.
-                        </p>
-                        <p>
-                            Overall, "Magical Toy Mart" seeks to provide a user-friendly platform for discovering and engaging with educational and learning toys. By combining a range of features, including authentication, service information, categorized toy selection,
-                            a captivating gallery, and personalized toy management, the project aims to create an enriching and enjoyable experience for users interested in educational toys.
-                        </p>
-                        <motion.div
-                            variants={fadeIn('up', 0.3)}
-                            initial="hidden"
-                            whileInView={'show'}
-                            viewport={{ once: false, amount: 0.5 }}
-                            className="grid grid-cols-2 md:grid-cols-2">
-                            <div>Client Site:
-                                <a href='https://magice-toy-mart.web.app/' className='ml-[80px] mt-[-35px] btn w-9 h-9 mb-[40px] flex justify-center item-center'>
-                                    <BsArrowUpRight></BsArrowUpRight>
-                                </a>
-                            </div>
-                            <div>Server Site:
-                                <span><a href='https://magice-toy-mart.web.app/' className='ml-[80px] mt-[-35px] btn w-9 h-9 mb-[40px] flex justify-center item-center'>
-                                    <BsArrowUpRight></BsArrowUpRight>
-                                </a></span>
-                            </div>
-                        </motion.div>
-                    </div>
-                </div>
                 {/* sixth project  */}
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-6 my-2">
                     <motion.h2
@@ -677,19 +715,29 @@ const AllWork = () => {
                         <p>
                             Banner Section: The banner section serves as the introductory component of the website. It incorporates captivating visuals, such as high-quality images along with compelling text to grab visitors' attention.
                         </p>
+                        {isShowMore4 && (
                         <p>
                             Features Section: The features section highlights the unique selling points or key features of G3 Architects. Using CSS animations, elements within this section can be animated to provide an interactive and dynamic experience. For instance, individual features can fade in or slide into view as the user scrolls down the page.
-                        </p>
-                        <p>
+                            <br />
                             Some Facts Section: The some facts section presents interesting and relevant statistics or facts about G3 Architects. CSS animations can be applied here to add visual interest and enhance the overall user experience. For example, numbers can be animated to increment gradually or elements can slide in with smooth transitions.
-                        </p>
-                        <p>
+                            <br />
                             Sponsors Section: The sponsors section showcases the sponsors or partners associated with G3 Architects. Animation can be incorporated to bring attention to sponsor logos or create an engaging effect when hovering over each logo. This can be achieved through transformations, scaling, or adding hover effects.
-                        </p>
+                        <br />
 
-                        <p>
+                        
                             Remember to keep the animations subtle, smooth, and complementary to the overall design and branding of G3 Architects. The goal is to provide an immersive and visually appealing experience that effectively showcases the project's content and engages visitors.
                         </p>
+                        )}
+
+                        <motion.button
+                            variants={fadeIn('up', 0.3)}
+                            initial="hidden"
+                            whileInView={'show'}
+                            viewport={{ once: false, amount: 0.7 }}
+                            onClick={toggleReadMoreLess4}
+                            className="text-accent">
+                            {isShowMore4 ? "Read Less" : "Read More"}
+                        </motion.button>
                         <motion.div
                             variants={fadeIn('up', 0.3)}
                             initial="hidden"
@@ -782,30 +830,36 @@ const AllWork = () => {
                         <p>
                             Navbar: Utilize Bootstrap's Navbar component to create a responsive navigation bar with the desired menu items and logo.
                         </p>
+                        {isShowMore5 && (
                         <p>
                             Banner Section: Use Bootstrap's Grid system to create a responsive layout for the banner section. Add an image or background color along with text and buttons to highlight the key message of the landing page.
-                        </p>
-                        <p>
+                        <br />
                             Legal Practice Area Section: Use Bootstrap's Grid system and Card component to create a responsive layout for showcasing different legal practice areas. Each practice area can be represented by a card containing an image, title, and a brief description.
-                        </p>
-                        <p>
+                            <br />
                             Our Client Say Section: Utilize Bootstrap's Carousel component to create a responsive carousel/slider showcasing client testimonials. Each testimonial can be represented as a slide containing a client's image, name, and their feedback.
-                        </p>
-                        <p>
+                            <br />
                             Q Section: Use Bootstrap's Grid system and Accordion component to create an expandable and collapsible section for frequently asked questions (FAQs). Each question can be represented as an accordion item with a question title and its corresponding answer.
-                        </p>
-                        <p>
+                            <br />
                             Contact Section: Create a responsive layout for the contact section using Bootstrap's Grid system. Add a contact form or contact information along with a call-to-action button to encourage users to get in touch.
-                        </p>
-                        <p>
+                            <br />
                             Footer: Utilize Bootstrap's Footer component to create a responsive footer section. Include links to relevant pages, copyright information, and any additional elements required.
-                        </p>
-                        <p>
+                            <br />
                             Throughout the design process, apply appropriate Bootstrap classes and customize the styles as per the specific design requirements of the Ed Tech landing page. Additionally,
                             leverage Bootstrap's responsive utilities and breakpoints to ensure the page looks and functions well across different screen sizes and devices.
 
                             Remember to link the necessary Bootstrap CSS and JS files to your HTML document to utilize Bootstrap's features effectively.
                         </p>
+                        )}
+
+                        <motion.button
+                            variants={fadeIn('up', 0.3)}
+                            initial="hidden"
+                            whileInView={'show'}
+                            viewport={{ once: false, amount: 0.7 }}
+                            onClick={toggleReadMoreLess5}
+                            className="text-accent">
+                            {isShowMore5 ? "Read Less" : "Read More"}
+                        </motion.button>
                         <motion.div
                             variants={fadeIn('up', 0.3)}
                             initial="hidden"

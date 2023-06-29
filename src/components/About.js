@@ -13,7 +13,7 @@ const About = () => {
   return (
     <section className='section' id='about' ref={ref}>
       {/* About */}
-      <div className='container mx-auto'>
+      <div className='container mx-auto mt-10'>
         <div className='flex flex-col gap-y-10 lg:flex-row lg:items-center lg:gap-x-20 lg:gap-y-0 h-screen'>
           {/* Img  */}
           <motion.div
@@ -34,7 +34,7 @@ const About = () => {
               About me
             </motion.h2>
             <h3 className='h3 mb-4'>
-              With a CSE degree, you have gained a strong foundation in various areas of computer science.
+              Welcome to my portfolio! I'm Manik Molla, a junior MERN stack developer who is enthusiastic about creating dynamic web applications.
             </h3>
             <motion.p
               variants={fadeIn('left', 0.3)}
@@ -42,15 +42,17 @@ const About = () => {
               whileInView={'show'}
               viewport={{ once: false, amount: 0.5 }}
               className='mb-6'>
-              lorem20 With a CSE degree, you have gained a strong foundation in various areas of computer science, including programming, algorithms, data structures, software development, computer architecture, databases, and more.
-              This knowledge and skill set can be applied in a wide range of industries With a CSE degree, you have gained a strong foundation in various areas of computer science, including programming, algorithms, data structures, software development, computer architecture, databases, and more.
+              I recently completed an intensive web development course at Programming Hero, where I honed my skills in the MERN stack. Equipped with a solid foundation in JavaScript, I thrive on crafting interactive and responsive user interfaces.
+              <br />
+              With a Bachelor's degree in Computer Science and Engineering from Daffodil International University, I have gained a comprehensive understanding of software development principles and practices. My educational background, combined with hands-on
+              experience in building applications using MongoDB, Express.js, React, and Node.js, enables me to develop robust and scalable solutions. I am passionate about staying up-to-date with the latest industry trends and continuously expanding my knowledge to deliver cutting-edge projects.
             </motion.p>
             <div className='flex gap-x-6 lg:gap-x-10 mb-12'>
               <div>
                 <div className='text-[40px] font-tertiary text-gradient mb-2'>
                   {
                     inView ?
-                      <CountUp start={0} end={13} duration={3}></CountUp> :
+                      <CountUp start={10} end={0} duration={3}></CountUp> :
                       null
                   }
                 </div>
@@ -63,10 +65,10 @@ const About = () => {
                 <div className='text-[40px] font-tertiary text-gradient mb-2'>
                   {
                     inView ?
-                      <CountUp start={0} end={15} duration={3}></CountUp> :
+                      <CountUp start={0} end={25} duration={3}></CountUp> :
                       null
                   }
-                  k+
+                  +
                 </div>
                 <div className='font-primary text-sm tracking-[2px]'>
                   Project <br />
@@ -78,10 +80,10 @@ const About = () => {
                 <div className='text-[40px] font-tertiary text-gradient mb-2'>
                   {
                     inView ?
-                      <CountUp start={0} end={12} duration={3}></CountUp> :
+                      <CountUp start={0} end={22} duration={3}></CountUp> :
                       null
                   }
-                  k+
+                  +
                 </div>
                 <div className='font-primary text-sm tracking-[2px]'>
                   Satisfied <br />

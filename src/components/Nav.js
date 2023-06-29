@@ -38,7 +38,7 @@ const Nav = () => {
           <BsClipboardData></BsClipboardData>
         </Link>
         <Link
-          to='work'
+          to='all-work'
           activeClass='active'
           smooth={true}
           spy={true}
@@ -56,7 +56,7 @@ const Nav = () => {
           <BsChatSquare></BsChatSquare>
         </Link>
 
-        <Link
+        {/* <Link
           to='all-work'
           activeClass='active'
           smooth={true}
@@ -64,7 +64,7 @@ const Nav = () => {
           className='cursor-pointer w-[60px] h-[60px] flex items-center justify-center'
         >
           <BsBriefcase></BsBriefcase>
-        </Link>
+        </Link> */}
       </div>
     </div>
   </nav>;

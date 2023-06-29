@@ -2,7 +2,7 @@ import React from 'react';
 // import img from '../assets/avatar.svg'BL.JPG
 import img from '../assets/BL.JPG'
 
-import { FaGithub, FaYoutube, FaDribbble } from 'react-icons/fa'
+import { FaGithub, FaFacebook, FaLinkedin } from 'react-icons/fa';
 import { TypeAnimation } from 'react-type-animation'
 import { motion } from 'framer-motion'
 import { fadeIn } from '../variants'
@@ -43,8 +43,8 @@ const Banner = () => {
               initial="hidden"
               whileInView={'show'}
               viewport={{ once: false, amount: 0.5 }}
-              className='mb-8 max-w-lg mx-auto lg:mx-0'>With a CSE degree, you have gained a strong foundation in various areas of computer science, including programming, algorithms, data structures, software development, computer architecture, databases, and more.
-              This knowledge and skill set can be applied in a wide range of industries, such as software development, cybersecurity, data analysis, artificial intelligence, web development, and many others.
+              className='mb-8 max-w-lg mx-auto lg:mx-0'>
+                I have a strong desire to work with different kinds of technologies and build up my career in the institution by utilizing my skills and knowledge. The working environment should allow me to understand my own values and provide me with a dynamic and challenging career.
             </motion.p>
             <div className='flex max-w-max gap-x-6 items-center mb-12 mx-autolg:mx-0'>
               <Link to='contact'>
@@ -60,14 +60,14 @@ const Banner = () => {
               whileInView={'show'}
               viewport={{ once: false, amount: 0.5 }}
               className='flex text-[20px] gap-x-6 max-w-max mx-auto lg:mx-0'>
-              <a href="#">
-                <FaYoutube></FaYoutube>
+              <a href="https://web.facebook.com/mdbl.manik/">
+                <FaFacebook></FaFacebook>
               </a>
-              <a href="#">
+              <a href="https://github.com/Manik1010">
                 <FaGithub></FaGithub>
               </a>
-              <a href="#">
-                <FaDribbble></FaDribbble>
+              <a href="https://www.linkedin.com/in/manik-molla-9b1562250/">
+                <FaLinkedin></FaLinkedin>
               </a>
             </motion.div>
           </div>

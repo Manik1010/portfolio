@@ -9,9 +9,9 @@ const Header = () => {
           <a href='#'>
             <img src={Logo} />
           </a>
-          <Link to='allwork'>
+          {/* <Link to='allwork'>
             <button className='btn btn-sm'>All Work</button>
-          </Link>
+          </Link> */}
           <Link to='contact'>
             <button className='btn btn-sm'>Work With Me</button>
           </Link>

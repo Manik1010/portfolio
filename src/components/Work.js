@@ -1,7 +1,7 @@
 import React from 'react';
 
-import img1 from '../assets/portfolio-img1.png'
-import img2 from '../assets/portfolio-img2.png'
+import img1 from '../assets/portfolio1.jpg'
+import img2 from '../assets/portfolio2.jpg'
 import img3 from '../assets/portfolio-img3.png'
 
 import { motion } from 'framer-motion'
@@ -30,8 +30,9 @@ const Work = () => {
                 whileInView={'show'}
                 viewport={{ once: false, amount: 0.7 }}
                 className='max-w-sm mb-16'>
-                With a CSE degree, you have gained a strong foundation in various areas of computer science.
-                With a CSE degree, you have gained a strong foundation in various areas of computer science.
+                That's great to hear! Working on a React.js projects for the last six months must have given you valuable experience and insights into building
+                dynamic and interactive web applications. React.js is a popular JavaScript library
+                for building user interfaces, and it offers a robust ecosystem of tools and libraries that can enhance your development process.
               </motion.p>
               <button className='btn btn-lg'>View all project</button>
             </div>
@@ -58,7 +59,7 @@ const Work = () => {
               </div>
             </div>
           </div>
-          <div className='flex-1 flex flex-col gap-y-10'>
+          <div className='flex-1 flex flex-col gap-y-6 mt-[200px]'>
 
             {/* Image  */}
             <div className='group relative overflow-hidden border-2 border-white/50 rounded-xl'>
